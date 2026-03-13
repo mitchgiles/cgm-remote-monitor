@@ -223,11 +223,6 @@ function create (env, ctx) {
       , title: '8-user view'
       , type: 'index'
     }
-    , "/spinclassindex.html": {
-      file: "spinclassindex.html"
-      , title: 'Spotify Spin Class Generator'
-      , type: 'spinclass'
-    }
   };
 
   Object.keys(appPages).forEach(function(page) {
@@ -240,9 +235,6 @@ function create (env, ctx) {
       });
     });
   });
-
-  const spotifySpinRouter = require('./lib/server/spotify-spin')(env);
-  app.use('/spinclass', spotifySpinRouter);
 
   const clockviews = require('./lib/server/clocks.js')(env, ctx);
   clockviews.setLocals(app.locals);
